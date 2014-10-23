@@ -43,6 +43,7 @@ $border-radius: 8px
         @include border-radius( 7px )
         width: 80%
         border: $border
+        vertical-align: middle
         &:focus
             @include box-shadow( 0, 0, 5px, 2px, rgba( $blue, 0.5 ) )
             border-color: $blue
@@ -55,6 +56,7 @@ $border-radius: 8px
         color: $white
         margin-left: 2%
         padding: $padding-input
+        vertical-align: middle
         &:focus
             outline: 0
         &:hover
@@ -68,23 +70,14 @@ $border-radius: 8px
     @include border-radius( $border-radius )
     padding: 20px
     background-color: #f0f0f0
-    height: 100%
-    overflow: hidden
+    margin-bottom: 0
 .window
     border: $border
     @include border-radius( $border-radius )
     margin: $margin auto
-    height: 100%
-    max-height: 100%
-    overflow: hidden
     padding: $padding
     background-color: $white
     @include box-shadow( 0, 8px, 15px, 6px, $color-shadow )
 .navbar
     @include box-shadow( 0, 8px, 15px, 6px, $color-shadow )
-    min-height: 2em
-    height: 2em
-    line-height: 2em
-    background-color: #f0f0f0
-    overflow: hidden
 // @fixed
