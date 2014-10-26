@@ -35,6 +35,23 @@ $border-radius: 8px
     background: linear-gradient( to bottom, $start 0%, $end 100% )
 // @layout
 // @modules
+.navbar
+    @include box-shadow( 0, 8px, 15px, 6px, $color-shadow )
+    min-height: 30px
+    height: 30px
+    background: #e4e4e4
+    border-bottom: $border-dark
+    .navbar-brand
+        height: 30px
+        line-height: 30px
+        padding: 0 15px
+#navbar
+    li
+        a
+            padding: 0 15px
+            height: 30px
+            line-height: 30px
+
 .search
     margin: 0 auto $margin
     position: relative
@@ -79,20 +96,4 @@ $border-radius: 8px
     padding: $padding
     background-color: $white
     @include box-shadow( 0, 8px, 15px, 6px, $color-shadow )
-.navbar
-    @include box-shadow( 0, 8px, 15px, 6px, $color-shadow )
-    min-height: 30px
-    height: 30px
-    background: #e4e4e4
-    border-bottom: $border-dark
-    .navbar-brand
-        height: 30px
-        line-height: 30px
-        padding: 0 15px
-#navbar
-    li
-        a
-            padding: 0 15px
-            height: 30px
-            line-height: 30px
 // @fixed
