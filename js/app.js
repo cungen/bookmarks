@@ -1,1 +1,1 @@
-angular.module( 'bookmark', [ 'controllers' ] );
+angular.module('bookmark', ['controllers']);

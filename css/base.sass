@@ -19,12 +19,11 @@ $padding-input: 8px 10px
 // @global-style
 body
     background-color: $color-background
-    height: 100%
-    overflow: hidden
+    padding-top: 30px
 $border: 1px solid $color-border
 $border-blue: 1px solid $color-blue
 $border-dark: 1px solid $color-border - 20
-$border-radius: 8px
+$border-radius: 6px
 
 @mixin border-radius( $top, $right: $top, $bottom: $top, $left: $right )
     -webkit-border-radius: $top $right $bottom $left
@@ -46,6 +45,15 @@ $border-radius: 8px
     height: 30px
     background: #e4e4e4
     border-bottom: $border-dark
+    .navbar-toggle
+        margin: 0
+        padding: 0 10px 0
+        height: 30px
+        min-height: 30px
+        span
+            background: $color-gray
+        &:active
+            font-size: 0.9em
     .navbar-brand
         height: 30px
         line-height: 30px
@@ -54,7 +62,11 @@ $border-radius: 8px
             line-height: 30px
             height: 30px
             color: $color-dark
+        &:hover, &:active
+            background-color: $color-blue
 #navbar
+    background-color: $color-background
+    border-bottom: 1px solid $color-border
     a:hover, a:active, li.active a
         background-color: $color-blue
         color: $color-white
@@ -64,17 +76,16 @@ $border-radius: 8px
             padding: 0 15px
             height: 30px
             line-height: 30px
-
 .search
-    margin: 0 auto $margin
+    margin: $padding $margin + 80px $padding auto
     position: relative
     input
         vertical-align: middle
         padding: $padding-input
         padding-left: 35px
-        @include border-radius( 18px )
-        width: 100%
+        @include border-radius( $border-radius )
         border: $border
+        width: 100%
         &:focus
             @include box-shadow( 0, 0, 5px, 2px, rgba( $color-blue, 0.5 ) )
             border-color: $color-blue
@@ -94,14 +105,19 @@ $border-radius: 8px
         left: 10px
         margin-top: -10px
     span.button
-        @include border-radius(10px)
         position: absolute
         top: 50%
         right: 10px
         margin-top: -10px
 .th-style
+    width: 90px
     float: right
-    text-align: right
+    vertical-align: middle
+    button
+        width: 50%
+        padding: $padding-input
+        vertical-align: middle
+        @include border-radius( $border-radius )
 .panel
     color: #000
     overflow: hidden
@@ -109,24 +125,19 @@ $border-radius: 8px
     @include border-radius( $border-radius )
     padding: 20px
     background-color: #f0f0f0
-    margin-bottom: 0
+    margin: $padding auto
 .window
     border: $border
     @include border-radius( $border-radius )
     margin: $margin auto
-    padding: $padding
+    padding: 0 $padding
     background-color: $color-white
     @include box-shadow( 0, 8px, 15px, 6px, $color-shadow )
-// @fixed
+// @platform
 @media(max-width: 768px)
     .row
         .search
             width: 100%
         .th-style
             display: none
-@media (min-height: 960px)
-    .row
-        .search
-            width: 90%
-        .th-style
-            width: 10%
+// @fixed
