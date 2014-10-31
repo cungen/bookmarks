@@ -1,24 +1,38 @@
-var require = {
-    baseUrl: 'js',
+require.config({
+    baseUrl: "js",
     paths: {
-        'angular': 'http://cdn.bootcss.com/angular.js/1.3.0-beta.8/angular',
-        'controllers': 'js/controllers/controllers',
-        'service': 'services',
-        'filter': 'filters'
+        jquery: "../bower_components/jquery/dist/jquery.min",
+        angular: "../bower_components/angular/angular.min",
+        uiRouter: "../bower_components/angular-ui-router/release/angular-ui-router.min",
+        bootstrap: '../bower_components/bootstrap/dist/js/bootstrap.min'
     },
-    waitSeconds: 15,
     shim: {
-        'controllers': {
-            deps: ['angular']
+        "angular": {"exports": "angular"},
+        "ui.router": {
+            deps: ["angular"],
+            "export": "ui.router"
+        },
+        "bootstrap": {
+            deps: ["jquery"],
+            "exports": "bootstrap"
         }
-    }
-};
+    },
+    priority: [
+        "angular"
+    ],
+    urlArgs: "bust=" + (new Date()).getTime()
+});
 
-define(['controllers'], function(controllers) {
-    controllers.controller('BookmarkController', [
-        '$scope',
-        function($scope) {
-            alert(111);
-        }
-    ]);
+window.name = "NG_DEFER_BOOTSTRAP!";
+
+require([
+    'angular',
+    'app',
+    'routers',
+    'bootstrap'
+], function(angular, app, routers, bootstrap) {
+    'use strict';
+    angular.element().ready(function() {
+        angular.resumeBootstrap([app['name']]);
+    });
 });
