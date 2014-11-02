@@ -31,9 +31,9 @@ html(lang="en", ng-app)
                 .col-sm-9
                     div.tools
                         .btn-group.th-style
-                            button.btn.btn-default(type="button", ui-sref="view1")
+                            button.btn.btn-default(type="button", ui-sref="grid")
                                 span.glyphicon.glyphicon-th-large
-                            button.btn.btn-default(type="button", ui-sref="view2")
+                            button.btn.btn-default(type="button", ui-sref="list")
                                 span.glyphicon.glyphicon-th-list
                         .search
                             input(type="text", placeholder="Search", ng-model="search")
@@ -42,10 +42,11 @@ html(lang="en", ng-app)
                     div(ui-view)
                 .col-sm-3
                     .panel
+                        | {{bookmark}}
                         ul.nav.nav-list
-                            li.nav-header 列表标题
-                            li.active
-                                a(href="#") 首页
+                            li.nav-header 分类
+                            li(ng-repeat='b in bookmark')
+                                a(href="#") {{b}}
                             li
                                 a(href="#") 库
                             li

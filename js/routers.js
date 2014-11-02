@@ -1,19 +1,17 @@
 define(['angular', 'app'], function(angular, app) {
     'use strict';
     return app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise("/view1");
+        $urlRouterProvider.otherwise("/grid");
         $stateProvider
-            .state('view1', {
-                url: "/view1",
+            .state('grid', {
+                url: "/grid",
                 templateUrl: "views/grid.html",
-                controllers: function() {
-                    console.log(111);
-                }
+                controller: "GridController"
             })
-            .state('view2', {
-                url: "/view2",
+            .state('list', {
+                url: "/list",
                 templateUrl: "views/list.html",
-                controllers: "MyCtrl2"
+                controllers: "ListController"
             });
     }]);
 });

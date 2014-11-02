@@ -2,5 +2,9 @@ define(['angular'], function() {
     'use strict';
 
     angular.module('services', [])
-        .value('version', '0.1');
+        .factory('BookmarkService', [
+            '$resource',
+            function($resource) {
+                return $resource('/data/:bookmark', {bookmark: '@bookmark'}, {});
+        }]);
 });
