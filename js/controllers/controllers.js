@@ -5,13 +5,16 @@ define(['angular', '../services/services'], function(angular) {
 
         .controller('GridController', [
             '$scope',
-            'BookmarkService',
-            function($scope, BookmarkService) {
-                BookmarkService.get({bookmark: 'bookmark.json'}, function(data) {
-                    $scope.bookmark = data;
-                }, function(err) {
-                    console.log(err);
-                });
+            '$http',
+            function($scope, $http) {
+                $http.get('../data/bookmark.json')
+                    .success(function(data) {
+                        $scope.bookmark = data;
+                        $scope.currentCate = data;
+                    });
+                $scope.changeCate = function(pcate, cate) {
+                    $scope.currentCate = $scope.currentCate[pcate][cate];
+                }
         }])
 
         .controller('ListController', [

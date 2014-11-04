@@ -3,8 +3,12 @@ define(['angular'], function() {
 
     angular.module('services', [])
         .factory('BookmarkService', [
-            '$resource',
-            function($resource) {
-                return $resource('/data/:bookmark', {bookmark: '@bookmark'}, {});
+            '$http',
+            function($http) {
+                return {
+                    get: function() {
+                        $http.get('data/bookmark.json');
+                    }
+                }
         }]);
 });

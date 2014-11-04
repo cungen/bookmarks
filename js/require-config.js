@@ -4,15 +4,11 @@ require.config({
         jquery: "../bower_components/jquery/dist/jquery.min",
         angular: "../bower_components/angular/angular.min",
         uiRouter: "../bower_components/angular-ui-router/release/angular-ui-router.min",
-        angularResource: "../bower_components/angular-resource/angular-resource.min",
-        bootstrap: '../bower_components/bootstrap/dist/js/bootstrap.min'
+        bootstrap: '../bower_components/bootstrap/dist/js/bootstrap.min',
+        APIService: 'services/APIService'
     },
     shim: {
         "angular": {"exports": "angular"},
-        "angularResource": {
-            deps: ["angular"],
-            "export": "angularResource"
-        },
         "uiRouter": {
             deps: ["angular"],
             "export": "uiRouter"
@@ -35,7 +31,7 @@ require([
     'app',
     'routers',
     'bootstrap'
-], function(angular, app, routers, bootstrap) {
+], function(angular, app) {
     'use strict';
     angular.element().ready(function() {
         angular.resumeBootstrap([app['name']]);

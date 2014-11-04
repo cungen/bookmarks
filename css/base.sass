@@ -3,13 +3,14 @@
 $color-white: #ffffff
 $color-dark: #000000
 $color-gray: #a0a0a0
+$color-gray-light: #efefef
 $color-blue: #0080ff
 $color-blue: #428bca
 $color-blue-dark: #428bca
 
 $color-border: #c4c4c4
 $color-shadow: rgba( 0, 0, 0, 0.1 )
-$color-background: #f0f0f0
+$color-background: #c4c4c4
 
 // @global-size
 $margin: 20px
@@ -43,7 +44,7 @@ $border-radius: 6px
     @include box-shadow( 0, 8px, 15px, 6px, $color-shadow )
     min-height: 30px
     height: 30px
-    background: #e4e4e4
+    background-color: $color-white
     border-bottom: $border-dark
     .navbar-toggle
         margin: 0
@@ -61,15 +62,21 @@ $border-radius: 6px
         i
             line-height: 30px
             height: 30px
-            color: $color-dark
+            color: $color-blue
         &:hover, &:active
             background-color: $color-blue
+            border-right: $border
+            i
+                color: $color-white
 #navbar
-    background-color: $color-background
-    border-bottom: 1px solid $color-border
-    a:hover, a:active, li.active a
+    background-color: $color-white
+    li.active a
         background-color: $color-blue
         color: $color-white
+    a:hover, a:active
+        background-color: $color-blue
+        color: $color-white
+        border-right: $border
     li
         a
             color: $color-blue
@@ -118,16 +125,15 @@ $border-radius: 6px
         padding: $padding-input
         vertical-align: middle
         @include border-radius( $border-radius )
-.panel
+.frame
     color: #000
     overflow: hidden
     border: $border
     @include border-radius( $border-radius )
     padding: 20px
-    background-color: #f0f0f0
+    background-color: $color-gray-light
     margin: $padding auto
 .window
-    border: $border
     @include border-radius( $border-radius )
     margin: $margin auto
     padding: 0 $padding

@@ -5,8 +5,7 @@ define(['angular', 'app'], function(angular, app) {
         $stateProvider
             .state('grid', {
                 url: "/grid",
-                templateUrl: "views/grid.html",
-                controller: "GridController"
+                templateUrl: "views/grid.html"
             })
             .state('list', {
                 url: "/list",

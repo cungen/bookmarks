@@ -1,11 +1,9 @@
-.panel
-    h3
-        h3 View 1 Grid View
-    blockquote
-        p blablabla
-        small 关键词 blablabla
-    ul
-        li 1
-        li 2
-        li 3
-        li 4 {{test}}
+.frame
+    .panel.panel-primary(ng-repeat='(k, v) in currentCate')
+        .panel-heading {{k}}
+        .panel-body {{v}} {{v.url}}
+            .row(ng-if='!v.url && v.url != ""')
+                .col-sm-3(ng-repeat='(k2, v2) in v')
+                    .alert.alert-info(ng-if='k2.url') {{k2}}
+                    a.btn.btn-link(ng-if='!k2.url', ng-click='changeCate(k, k2)')
+                        .alert.alert-success {{k2}}
