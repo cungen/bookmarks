@@ -1,10 +1,16 @@
 // @global
 // @global-color
-$blue: #0080ff
-$white: #ffffff
+$color-white: #ffffff
+$color-dark: #000000
+$color-gray: #a0a0a0
+$color-gray-light: #efefef
+$color-blue: #0080ff
+$color-blue: #428bca
+$color-blue-dark: #428bca
+
 $color-border: #c4c4c4
 $color-shadow: rgba( 0, 0, 0, 0.1 )
-$color-background: #f0f0f0
+$color-background: #c4c4c4
 
 // @global-size
 $margin: 20px
@@ -14,12 +20,11 @@ $padding-input: 8px 10px
 // @global-style
 body
     background-color: $color-background
-    height: 100%
-    overflow: hidden
+    padding-top: 30px
 $border: 1px solid $color-border
-$border-blue: 1px solid $blue
+$border-blue: 1px solid $color-blue
 $border-dark: 1px solid $color-border - 20
-$border-radius: 8px
+$border-radius: 6px
 
 @mixin border-radius( $top, $right: $top, $bottom: $top, $left: $right )
     -webkit-border-radius: $top $right $bottom $left
@@ -35,64 +40,110 @@ $border-radius: 8px
     background: linear-gradient( to bottom, $start 0%, $end 100% )
 // @layout
 // @modules
+.navbar
+    @include box-shadow( 0, 8px, 15px, 6px, $color-shadow )
+    min-height: 30px
+    height: 30px
+    background-color: $color-white
+    border-bottom: $border-dark
+    .navbar-toggle
+        margin: 0
+        padding: 0 10px 0
+        height: 30px
+        min-height: 30px
+        span
+            background: $color-gray
+        &:active
+            font-size: 0.9em
+    .navbar-brand
+        height: 30px
+        line-height: 30px
+        padding: 0 15px
+        i
+            line-height: 30px
+            height: 30px
+            color: $color-blue
+        &:hover, &:active
+            background-color: $color-blue
+            border-right: $border
+            i
+                color: $color-white
+#navbar
+    background-color: $color-white
+    li.active a
+        background-color: $color-blue
+        color: $color-white
+    a:hover, a:active
+        background-color: $color-blue
+        color: $color-white
+        border-right: $border
+    li
+        a
+            color: $color-blue
+            padding: 0 15px
+            height: 30px
+            line-height: 30px
 .search
-    margin: 0 auto $margin
+    margin: $padding $margin + 80px $padding auto
     position: relative
     input
         vertical-align: middle
         padding: $padding-input
-        @include border-radius( 7px )
-        width: 80%
+        padding-left: 35px
+        @include border-radius( $border-radius )
         border: $border
-        vertical-align: middle
+        width: 100%
         &:focus
-            @include box-shadow( 0, 0, 5px, 2px, rgba( $blue, 0.5 ) )
-            border-color: $blue
+            @include box-shadow( 0, 0, 5px, 2px, rgba( $color-blue, 0.5 ) )
+            border-color: $color-blue
             outline: 0
+    span
+        width: 20px
+        height: 20px
+        font-size: 15px
+        line-height: 20px
+        text-align: center
+        cursor: pointer
+        &:active
+            font-size: 14px
+    span.go
+        position: absolute
+        top: 50%
+        left: 10px
+        margin-top: -10px
+    span.button
+        position: absolute
+        top: 50%
+        right: 10px
+        margin-top: -10px
+.th-style
+    width: 90px
+    float: right
+    vertical-align: middle
     button
-        @include border-radius( 7px )
-        width: 18%
-        background-color: $blue
-        border: $border-blue
-        color: $white
-        margin-left: 2%
+        width: 50%
         padding: $padding-input
         vertical-align: middle
-        &:focus
-            outline: 0
-        &:hover
-            background-color: $blue - 10
-        &:active
-            background-color: $blue - 20
-.panel
+        @include border-radius( $border-radius )
+.frame
     color: #000
     overflow: hidden
     border: $border
     @include border-radius( $border-radius )
     padding: 20px
-    background-color: #f0f0f0
-    margin-bottom: 0
+    background-color: $color-gray-light
+    margin: $padding auto
 .window
-    border: $border
     @include border-radius( $border-radius )
     margin: $margin auto
-    padding: $padding
-    background-color: $white
+    padding: 0 $padding
+    background-color: $color-white
     @include box-shadow( 0, 8px, 15px, 6px, $color-shadow )
-.navbar
-    @include box-shadow( 0, 8px, 15px, 6px, $color-shadow )
-    min-height: 30px
-    height: 30px
-    background: #e4e4e4
-    border-bottom: $border-dark
-    .navbar-brand
-        height: 30px
-        line-height: 30px
-        padding: 0 15px
-#navbar
-    li
-        a
-            padding: 0 15px
-            height: 30px
-            line-height: 30px
+// @platform
+@media(max-width: 768px)
+    .row
+        .search
+            width: 100%
+        .th-style
+            display: none
 // @fixed

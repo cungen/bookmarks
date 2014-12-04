@@ -1,0 +1,9 @@
+.frame
+    .panel.panel-primary(ng-repeat='(k, v) in currentCate')
+        .panel-heading {{k}}
+        .panel-body {{v}} {{v.url}}
+            .row(ng-if='!v.url && v.url != ""')
+                .col-sm-3(ng-repeat='(k2, v2) in v')
+                    .alert.alert-info(ng-if='k2.url') {{k2}}
+                    a.btn.btn-link(ng-if='!k2.url', ng-click='changeCate(k, k2)')
+                        .alert.alert-success {{k2}}

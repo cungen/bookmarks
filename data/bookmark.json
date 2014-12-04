@@ -1,0 +1,49 @@
+{
+    "study": {
+        "github": {
+            "url": "",
+            "img": "",
+            "time": "",
+            "categorys": "",
+            "tags": ""
+        },
+        "css": {
+            "auto width": {
+                "url": "",
+                "img": "",
+                "time": "",
+                "categorys": "",
+                "tags": ""
+            }
+        }
+    },
+    "fun": {
+        "game": {
+            "wangyi": {
+                "url": "",
+                "img": "",
+                "time": "",
+                "categorys": "",
+                "tags": ""
+            }
+        },
+        "joke": {
+            "apple 20": {
+                "url": "",
+                "img": "",
+                "time": "",
+                "categorys": "",
+                "tags": ""
+            },
+            "cn": {
+                "xiaomi": {
+                    "url": "",
+                    "img": "",
+                    "time": "",
+                    "categorys": "",
+                    "tags": ""
+                }
+            }
+        }
+    }
+}

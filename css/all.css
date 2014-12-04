@@ -1,5 +1,5 @@
 body {
-  background-color: #f0f0f0;
+  background-color: #c4c4c4;
   padding-top: 30px; }
 
 .navbar {
@@ -8,7 +8,7 @@ body {
   box-shadow: 0 8px 15px 6px rgba(0, 0, 0, 0.1);
   min-height: 30px;
   height: 30px;
-  background: #e4e4e4;
+  background-color: #ffffff;
   border-bottom: 1px solid #b0b0b0; }
   .navbar .navbar-toggle {
     margin: 0;
@@ -26,16 +26,22 @@ body {
     .navbar .navbar-brand i {
       line-height: 30px;
       height: 30px;
-      color: #000000; }
+      color: #428bca; }
     .navbar .navbar-brand:hover, .navbar .navbar-brand:active {
-      background-color: #428bca; }
+      background-color: #428bca;
+      border-right: 1px solid #c4c4c4; }
+      .navbar .navbar-brand:hover i, .navbar .navbar-brand:active i {
+        color: #ffffff; }
 
 #navbar {
-  background-color: #f0f0f0;
-  border-bottom: 1px solid #c4c4c4; }
-  #navbar a:hover, #navbar a:active, #navbar li.active a {
+  background-color: #ffffff; }
+  #navbar li.active a {
     background-color: #428bca;
     color: #ffffff; }
+  #navbar a:hover, #navbar a:active {
+    background-color: #428bca;
+    color: #ffffff;
+    border-right: 1px solid #c4c4c4; }
   #navbar li a {
     color: #428bca;
     padding: 0 15px;
@@ -92,7 +98,7 @@ body {
     -moz-border-radius: 6px 6px 6px 6px;
     border-radius: 6px 6px 6px 6px; }
 
-.panel {
+.frame {
   color: #000;
   overflow: hidden;
   border: 1px solid #c4c4c4;
@@ -100,11 +106,10 @@ body {
   -moz-border-radius: 6px 6px 6px 6px;
   border-radius: 6px 6px 6px 6px;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: #efefef;
   margin: 25px auto; }
 
 .window {
-  border: 1px solid #c4c4c4;
   -webkit-border-radius: 6px 6px 6px 6px;
   -moz-border-radius: 6px 6px 6px 6px;
   border-radius: 6px 6px 6px 6px;
@@ -121,4 +126,4 @@ body {
   .row .th-style {
     display: none; } }
 
-/*# sourceMappingURL=base.css.map */
+/*# sourceMappingURL=all.css.map */
